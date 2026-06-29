@@ -13,6 +13,40 @@ Progateハッカソン 2026年7月 チーム「とんとん飴」のリポジト
 
 ---
 
+## 環境構築（フロントエンド）
+
+### 必要なもの
+- Node.js 18以上
+- Expo Go アプリ（iOS/Android）→ **SDK 54対応版が必要**
+
+### セットアップ
+
+```bash
+cd app
+npm install --legacy-peer-deps
+```
+
+### 起動
+
+```bash
+npx expo start --host lan
+```
+
+QRコードをExpo Goでスキャンして確認。
+
+### ⚠️ 注意：Expo GoのSDKバージョンについて
+
+Expo GoはApp Storeのバージョンに応じてサポートするSDKが異なります。  
+このプロジェクトは **SDK 54** を使用しています。
+
+| Expo Go の状態 | 対処方法 |
+| :--- | :--- |
+| SDK 54対応版（最新） | そのままOK |
+| 「Project is incompatible」エラーが出る | Expo GoをApp Storeで更新する |
+| App Storeに更新がない | `npx expo start --host lan` のターミナルにサポートSDKバージョンが表示されるので、`app/package.json` の `expo` バージョンをそれに合わせる |
+
+---
+
 ## 📋 TODO（次回ミーティング議題）
 
 > 以下をチームで話し合い、`docs/PROJECT.md` に反映する。
