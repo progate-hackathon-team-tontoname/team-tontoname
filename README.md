@@ -8,6 +8,7 @@ Progateハッカソン 2026年7月 チーム「とんとん飴」のリポジト
 | :--- | :--- |
 | [docs/PROJECT.md](docs/PROJECT.md) | プロジェクト概要（あずかり旅） |
 | [docs/hackathon-information.md](docs/hackathon-information.md) | ハッカソンのルール・スケジュール・審査基準 |
+| [docs/pre-hackathon-todo.md](docs/pre-hackathon-todo.md) | ハッカソン当日までのTODO |
 | [docs/tech-stack.md](docs/tech-stack.md) | 技術スタック・画面構成・機能一覧（検討中） |
 | [docs/development-guidelines.md](docs/development-guidelines.md) | Git運用・コミット規約・PRプロセス |
 
