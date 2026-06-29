@@ -1,7 +1,7 @@
 # 技術スタック
 
 > [!NOTE]
-> このドキュメントは検討中の内容です。チームミーティングで確定させてください。
+> バックエンドは **Express（TypeScript）** に決定しました。その他の項目は引き続き検討中です。
 
 ## フレームワーク・ライブラリ
 
@@ -10,7 +10,8 @@
 | **アプリ基盤** | [Expo](https://expo.dev/) (React Native) | セットアップが速く、ハッカソンに最適。iOS/Android 両対応 |
 | **ナビゲーション** | [Expo Router](https://expo.github.io/router/) | ファイルベースルーティングで直感的に管理できる |
 | **地図** | [react-native-maps](https://github.com/react-native-maps/react-native-maps) + Google Maps API | GPSマーカー・移動ルートの表示 |
-| **バックエンド** | [Firebase](https://firebase.google.com/)（Firestore + Storage） | リアルタイム同期が得意、サーバーレスで構築コストが低い |
+| **バックエンド** | [Express](https://expressjs.com/) (TypeScript) | React Native と言語を統一（TypeScript）。シンプルで学習コストが低い |
+| **DB / リアルタイム** | [Firebase](https://firebase.google.com/)（Firestore + Storage） | リアルタイム同期・ファイル保存。Express サーバーから書き込み |
 | **AI** | [Gemini API](https://ai.google.dev/) | キャラクターの「感想」テキスト・お土産コメントの生成 |
 | **プッシュ通知** | [Expo Notifications](https://docs.expo.dev/push-notifications/overview/) | 「〇〇に着いたよ！」通知をゲストへ送信 |
 
@@ -34,9 +35,9 @@
 
 | 機能 | 概要 |
 | :--- | :--- |
-| **キャラクター移動** | AIエージェントがGPS座標を生成 → Firestore に書き込み |
+| **キャラクター移動** | Express サーバーが GPS 座標を生成 → Firestore に書き込み |
 | **リアルタイム地図** | Firestore をリッスンし、`react-native-maps` のマーカーをリアルタイム更新 |
-| **感想タイムライン** | Gemini API がスポットごとの「感想」テキストを生成して投稿 |
+| **感想タイムライン** | Express サーバーが Gemini API を呼び出し、感想テキストを生成して Firestore に投稿 |
 
 ### 余裕があれば実装
 
@@ -53,14 +54,16 @@
 
 ```
 [Expo アプリ（ゲスト）]
-        │
-        │ リアルタイムリッスン
-        ▼
-[Firebase Firestore]  ←── 書き込み ──  [AI エージェント（サーバー）]
-        │                                        │
-        │                                        │ テキスト生成
-[Firebase Storage]                       [Gemini API]
-（写真・お土産画像）
+        │                          │
+        │ REST API リクエスト       │ リアルタイムリッスン
+        ▼                          ▼
+[Express サーバー（TypeScript）]  [Firebase Firestore]
+        │                          ▲
+        │ Gemini API 呼び出し      │ 書き込み
+        ▼                          │
+  [Gemini API]  ────────────────────┘
+
+[Firebase Storage]（写真・お土産画像）
 ```
 
 ---
@@ -73,5 +76,6 @@
 - [ ] Google Maps API キーの取得担当者
 - [ ] Firebase プロジェクトの作成担当者
 - [ ] Gemini API キーの取得担当者
+- [ ] Express サーバーのデプロイ先（Railway / Render など）
 - [ ] AIエージェントのGPS座標生成ロジック（ランダム？実際の地図API？）
 - [ ] キャラクターのビジュアル（イラスト素材の用意）
