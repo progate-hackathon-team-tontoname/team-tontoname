@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../constants/Colors';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F7FF',
+    backgroundColor: Colors.background,
   },
   header: {
     flexDirection: 'row',
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
   },
   menuIcon: {
     fontSize: 24,
-    color: '#1A2E4A',
+    color: Colors.text.primary,
   },
   characterArea: {
     flex: 1,
@@ -63,14 +64,14 @@ const styles = StyleSheet.create({
   },
   characterName: {
     fontSize: 18,
-    color: '#1A2E4A',
+    color: Colors.text.primary,
     fontWeight: '500',
   },
   azukaruButton: {
     position: 'absolute',
     bottom: 48,
     right: 24,
-    backgroundColor: '#1A2E4A',
+    backgroundColor: Colors.button.primary,
     paddingHorizontal: 28,
     paddingVertical: 16,
     borderRadius: 32,
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   azukaruButtonText: {
-    color: '#FFFFFF',
+    color: Colors.text.light,
     fontSize: 18,
     fontWeight: 'bold',
     letterSpacing: 1,

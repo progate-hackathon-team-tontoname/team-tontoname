@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../constants/Colors';
 
 const MOCK_SOUVENIRS = [
   {
@@ -146,7 +147,7 @@ export default function SouvenirScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1A2E4A',
+    backgroundColor: Colors.primary,
   },
   header: {
     flexDirection: 'row',
@@ -163,12 +164,12 @@ const styles = StyleSheet.create({
   },
   backIcon: {
     fontSize: 22,
-    color: '#FFFFFF',
+    color: Colors.text.light,
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: Colors.text.light,
   },
   animationArea: {
     alignItems: 'center',
@@ -186,7 +187,7 @@ const styles = StyleSheet.create({
   },
   characterMessage: {
     fontSize: 16,
-    color: '#FFFFFF',
+    color: Colors.text.light,
     fontWeight: '600',
   },
   boxContainer: {
@@ -202,7 +203,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: Colors.text.light,
     paddingHorizontal: 20,
     marginBottom: 12,
   },
@@ -236,7 +237,7 @@ const styles = StyleSheet.create({
   souvenirPlace: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: Colors.text.light,
   },
   souvenirComment: {
     fontSize: 13,
@@ -245,13 +246,13 @@ const styles = StyleSheet.create({
   },
   homeButton: {
     margin: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.card,
     borderRadius: 16,
     padding: 18,
     alignItems: 'center',
   },
   homeButtonText: {
-    color: '#1A2E4A',
+    color: Colors.primary,
     fontSize: 16,
     fontWeight: 'bold',
   },
