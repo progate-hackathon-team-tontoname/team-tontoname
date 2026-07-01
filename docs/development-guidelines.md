@@ -21,6 +21,9 @@ main
 - `docs/xxx` : ドキュメントの作成・更新
 - `refactor/xxx` : リファクタリング
 
+#### マージ方針
+PR を `main` ブランチへマージする際は、履歴をきれいに保つため原則 **Squash and Merge** を使用してください。
+
 > [!IMPORTANT]
 > `main` ブランチへの直接 push は**禁止**です。必ず Pull Request を経由してマージしてください。
 
