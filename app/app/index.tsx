@@ -1,8 +1,24 @@
 import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function StartScreen() {
   const router = useRouter();
+
+  useEffect(() => {
+    console.log("=== API疎通テスト開始 ===");
+    const apiUrl = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
+    fetch(`${apiUrl}/health`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("=== API疎通テスト成功！ ===");
+        console.log("レスポンスデータ:", data);
+      })
+      .catch((err) => {
+        console.log("=== API疎通テスト失敗 ===");
+        console.error("エラー内容:", err);
+      });
+  }, []);
 
   return (
     <Pressable style={styles.container} onPress={() => router.replace('/home')}>
