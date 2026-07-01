@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../constants/Colors';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 const SHEET_COLLAPSED = SCREEN_HEIGHT * 0.65;
@@ -129,7 +130,7 @@ export default function MapScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F7FF',
+    backgroundColor: Colors.background,
   },
   header: {
     flexDirection: 'row',
@@ -147,12 +148,12 @@ const styles = StyleSheet.create({
   },
   backIcon: {
     fontSize: 22,
-    color: '#1A2E4A',
+    color: Colors.text.primary,
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#1A2E4A',
+    color: Colors.text.primary,
   },
   souvenirButton: {
     width: 44,
@@ -165,7 +166,7 @@ const styles = StyleSheet.create({
   },
   mapPlaceholder: {
     flex: 1,
-    backgroundColor: '#C8DFF0',
+    backgroundColor: Colors.mapPlaceholder,
     alignItems: 'center',
     justifyContent: 'center',
     gap: 12,
@@ -175,7 +176,7 @@ const styles = StyleSheet.create({
   },
   mapPlaceholderText: {
     fontSize: 14,
-    color: '#4A6580',
+    color: Colors.mapText,
     textAlign: 'center',
     lineHeight: 22,
   },
@@ -188,7 +189,7 @@ const styles = StyleSheet.create({
   },
   markerLabel: {
     fontSize: 12,
-    color: '#4A6580',
+    color: Colors.mapText,
     marginTop: 4,
   },
   bottomSheet: {
@@ -196,7 +197,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.card,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     shadowColor: '#000',
@@ -209,7 +210,7 @@ const styles = StyleSheet.create({
   sheetHandle: {
     width: 40,
     height: 4,
-    backgroundColor: '#CBD5E0',
+    backgroundColor: Colors.line,
     borderRadius: 2,
     alignSelf: 'center',
     marginBottom: 12,
@@ -224,11 +225,11 @@ const styles = StyleSheet.create({
   sheetTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#1A2E4A',
+    color: Colors.text.primary,
   },
   sheetSubtitle: {
     fontSize: 13,
-    color: '#718096',
+    color: Colors.text.muted,
   },
   timelineScroll: {
     maxHeight: SCREEN_HEIGHT * 0.5,
@@ -248,19 +249,19 @@ const styles = StyleSheet.create({
   },
   timelineTime: {
     fontSize: 12,
-    color: '#718096',
+    color: Colors.text.muted,
     fontWeight: '600',
     marginBottom: 4,
   },
   timelineLine: {
     width: 2,
     flex: 1,
-    backgroundColor: '#CBD5E0',
+    backgroundColor: Colors.line,
     minHeight: 40,
   },
   timelineCard: {
     flex: 1,
-    backgroundColor: '#F7FAFC',
+    backgroundColor: '#F7FAFC', // 薄いタイムラインカード背景色は固定のままにします
     borderRadius: 12,
     padding: 12,
     marginBottom: 12,
@@ -269,11 +270,11 @@ const styles = StyleSheet.create({
   timelinePlace: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#1A2E4A',
+    color: Colors.text.primary,
   },
   timelineComment: {
     fontSize: 14,
-    color: '#4A5568',
+    color: Colors.text.secondary,
     lineHeight: 20,
   },
 });

@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../constants/Colors';
 
 const BAG_TYPES = [
   { id: 'suitcase', label: 'スーツケース', icon: '🧳' },
@@ -63,7 +64,7 @@ export default function CheckinScreen() {
         <TextInput
           style={styles.nameInput}
           placeholder="例：たびすけ"
-          placeholderTextColor="#A0AEC0"
+          placeholderTextColor={Colors.placeholder}
           value={name}
           onChangeText={setName}
           maxLength={20}
@@ -84,7 +85,7 @@ export default function CheckinScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F7FF',
+    backgroundColor: Colors.background,
   },
   header: {
     flexDirection: 'row',
@@ -101,12 +102,12 @@ const styles = StyleSheet.create({
   },
   backIcon: {
     fontSize: 22,
-    color: '#1A2E4A',
+    color: Colors.text.primary,
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#1A2E4A',
+    color: Colors.text.primary,
   },
   content: {
     padding: 20,
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
   sectionLabel: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#1A2E4A',
+    color: Colors.text.primary,
     marginTop: 8,
     marginBottom: 4,
   },
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
   },
   bagCard: {
     width: '47%',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.card,
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
@@ -141,43 +142,43 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   bagCardSelected: {
-    borderColor: '#1A2E4A',
-    backgroundColor: '#EBF4FF',
+    borderColor: Colors.selection.selectedBorder,
+    backgroundColor: Colors.selection.selectedBg,
   },
   bagIcon: {
     fontSize: 48,
   },
   bagLabel: {
     fontSize: 14,
-    color: '#4A5568',
+    color: Colors.text.secondary,
     fontWeight: '500',
   },
   bagLabelSelected: {
-    color: '#1A2E4A',
+    color: Colors.text.primary,
     fontWeight: 'bold',
   },
   nameInput: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.card,
     borderRadius: 12,
     padding: 16,
     fontSize: 16,
-    color: '#1A2E4A',
+    color: Colors.text.primary,
     borderWidth: 1.5,
-    borderColor: '#E2E8F0',
+    borderColor: Colors.border,
     marginBottom: 8,
   },
   submitButton: {
-    backgroundColor: '#1A2E4A',
+    backgroundColor: Colors.button.primary,
     borderRadius: 16,
     padding: 18,
     alignItems: 'center',
     marginTop: 16,
   },
   submitButtonDisabled: {
-    backgroundColor: '#A0AEC0',
+    backgroundColor: Colors.button.disabled,
   },
   submitButtonText: {
-    color: '#FFFFFF',
+    color: Colors.text.light,
     fontSize: 18,
     fontWeight: 'bold',
   },
