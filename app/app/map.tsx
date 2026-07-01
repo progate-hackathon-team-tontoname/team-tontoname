@@ -12,12 +12,13 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/Colors';
+import { TimelineItem } from '../types';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 const SHEET_COLLAPSED = SCREEN_HEIGHT * 0.65;
 const SHEET_EXPANDED = SCREEN_HEIGHT * 0.2;
 
-const MOCK_TIMELINE = [
+const MOCK_TIMELINE: TimelineItem[] = [
   {
     id: '1',
     time: '10:30',

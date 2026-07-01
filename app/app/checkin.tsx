@@ -10,8 +10,9 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/Colors';
+import { BagType } from '../types';
 
-const BAG_TYPES = [
+const BAG_TYPES: BagType[] = [
   { id: 'suitcase', label: 'スーツケース', icon: '🧳' },
   { id: 'boston', label: 'ボストンバッグ', icon: '👜' },
   { id: 'backpack', label: 'リュックサック', icon: '🎒' },

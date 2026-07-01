@@ -10,8 +10,9 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/Colors';
+import { SouvenirItem } from '../types';
 
-const MOCK_SOUVENIRS = [
+const MOCK_SOUVENIRS: SouvenirItem[] = [
   {
     id: '1',
     type: 'postcard',
