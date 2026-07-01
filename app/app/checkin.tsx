@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/Colors';
+import { Header } from '../components/Header';
 import { BagType } from '../types';
 
 const BAG_TYPES: BagType[] = [
@@ -28,13 +29,7 @@ export default function CheckinScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Pressable onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backIcon}>←</Text>
-        </Pressable>
-        <Text style={styles.headerTitle}>荷物を預ける</Text>
-        <View style={{ width: 44 }} />
-      </View>
+      <Header title="荷物を預ける" onBackPress={() => router.back()} />
 
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.sectionLabel}>カバンの種類を選んでね</Text>
@@ -87,28 +82,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.background,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  backButton: {
-    width: 44,
-    height: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  backIcon: {
-    fontSize: 22,
-    color: Colors.text.primary,
-  },
-  headerTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
   },
   content: {
     padding: 20,

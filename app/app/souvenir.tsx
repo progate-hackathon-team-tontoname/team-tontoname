@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/Colors';
+import { Header } from '../components/Header';
 import { SouvenirItem } from '../types';
 
 const MOCK_SOUVENIRS: SouvenirItem[] = [
@@ -79,13 +80,11 @@ export default function SouvenirScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Pressable onPress={() => router.replace('/home')} style={styles.backButton}>
-          <Text style={styles.backIcon}>←</Text>
-        </Pressable>
-        <Text style={styles.headerTitle}>お土産</Text>
-        <View style={{ width: 44 }} />
-      </View>
+      <Header
+        title="お土産"
+        onBackPress={() => router.replace('/home')}
+        textColor={Colors.text.light}
+      />
 
       {/* アニメーションエリア */}
       <View style={styles.animationArea}>
@@ -149,28 +148,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.primary,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  backButton: {
-    width: 44,
-    height: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  backIcon: {
-    fontSize: 22,
-    color: Colors.text.light,
-  },
-  headerTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.text.light,
   },
   animationArea: {
     alignItems: 'center',

@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/Colors';
+import { Header } from '../components/Header';
 import { TimelineItem } from '../types';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
@@ -64,19 +65,15 @@ export default function MapScreen() {
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
-      {/* ヘッダー */}
-      <View style={styles.header}>
-        <Pressable onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backIcon}>←</Text>
-        </Pressable>
-        <Text style={styles.headerTitle}>旅の軌跡</Text>
-        <Pressable
-          style={styles.souvenirButton}
-          onPress={() => router.push('/souvenir')}
-        >
-          <Text style={styles.souvenirIcon}>🎁</Text>
-        </Pressable>
-      </View>
+      <Header
+        title="旅の軌跡"
+        onBackPress={() => router.back()}
+        rightElement={
+          <Pressable onPress={() => router.push('/souvenir')}>
+            <Text style={styles.souvenirIcon}>🎁</Text>
+          </Pressable>
+        }
+      />
 
       {/* マッププレースホルダー */}
       <View style={styles.mapPlaceholder}>
@@ -132,35 +129,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.background,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    zIndex: 10,
-  },
-  backButton: {
-    width: 44,
-    height: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  backIcon: {
-    fontSize: 22,
-    color: Colors.text.primary,
-  },
-  headerTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
-  },
-  souvenirButton: {
-    width: 44,
-    height: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   souvenirIcon: {
     fontSize: 24,
