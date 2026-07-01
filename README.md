@@ -11,6 +11,7 @@ Progateハッカソン 2026年7月 チーム「とんとん飴」のリポジト
 | [docs/pre-hackathon-todo.md](docs/pre-hackathon-todo.md) | ハッカソン当日までのTODO |
 | [docs/tech-stack.md](docs/tech-stack.md) | 技術スタック・画面構成・機能一覧（検討中） |
 | [docs/development-guidelines.md](docs/development-guidelines.md) | Git運用・コミット規約・PRプロセス |
+| [docs/eas-deployment-guide.md](docs/eas-deployment-guide.md) | EAS Build & Update 導入・実機確認手順書 |
 
 ---
 
